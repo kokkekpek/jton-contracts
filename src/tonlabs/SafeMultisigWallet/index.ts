@@ -3,6 +3,8 @@ import {AbiContract, KeyPair} from '@tonclient/core/dist/modules'
 import {TonClient} from '@tonclient/core'
 import {Contract, ResultOfCall} from 'jton'
 
+export {SafeMultisigWalletContract}
+
 export interface DeployIn {
     owners: string[] | number[],
     reqConfirms: number
