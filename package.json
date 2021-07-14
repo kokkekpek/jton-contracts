@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Free TON contracts wrapped in jTON classes",
   "main": "dist/index",
+  "scripts": {
+    "build": "tsc --build",
+    "prepublishOnly": "yarn install && yarn tsc"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kokkekpek/jton-contracts.git"
@@ -27,5 +31,11 @@
   "bugs": {
     "url": "https://github.com/kokkekpek/jton-contracts/issues"
   },
-  "homepage": "https://github.com/kokkekpek/jton-contracts#readme"
+  "homepage": "https://github.com/kokkekpek/jton-contracts#readme",
+  "devDependencies": {
+    "jton": "^0.6.2",
+    "ts-node": "^10.1.0",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
 }
