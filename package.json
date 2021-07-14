@@ -1,7 +1,7 @@
 {
   "name": "jton-contracts",
   "version": "0.0.1",
-  "description": "jTON contracts",
+  "description": "Free TON contracts wrapped in jTON classes",
   "main": "dist/index",
   "repository": {
     "type": "git",
