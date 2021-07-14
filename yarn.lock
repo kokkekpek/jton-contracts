@@ -60,6 +60,11 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.1.tgz#a6ca6a9a0ff366af433f42f5f0e124794ff6b8f1"
   integrity sha512-FTgBI767POY/lKNDNbIzgAX6miIDBs6NTCbdlDb8TrWovHsSvaVIZDlTqym29C6UqhzwcJx4CYr+AlrMywA0cA==
 
+"@types/node@^16.3.2":
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.2.tgz#655432817f83b51ac869c2d51dd8305fb8342e16"
+  integrity sha512-jJs9ErFLP403I+hMLGnqDRWT0RYKSvArxuBVh2veudHV7ifEC1WAmjJADacZ7mRbA2nWgHtn8xyECMAot0SkAw==
+
 ajv@^6.12.3:
   version "6.12.6"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
@@ -490,10 +495,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jton@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/jton/-/jton-0.6.2.tgz#5e554009bbd409fe62c2dce1f3f56b5c75f578c4"
-  integrity sha512-YCyuH9/ExAEliZ4TdFtdF9snZ8/yAFHh2+IkfOEZzw4hsCbfDrLsgH5n1xOz+PxsauRTqD658rPdfpvSgXPpew==
+jton@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/jton/-/jton-0.6.4.tgz#5b7201b067ef362d8c5ac6e9e48e10288a7d3631"
+  integrity sha512-0O2PSquHxBnseop3SrNYBrky4nk/4ZQH5GQPxrKuqDvMUJgnTKEjHgbvXbei6qBiQvG7YetnzpUQBKOwIgmD4Q==
   dependencies:
     "@tonclient/core" "^1.19.0"
     colors "^1.4.0"
