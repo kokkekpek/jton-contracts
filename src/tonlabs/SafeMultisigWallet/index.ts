@@ -8,7 +8,6 @@ export interface DeployIn {
     reqConfirms: number
 }
 
-
 export interface SendTransactionIn {
     dest: string
     value: number
@@ -16,7 +15,6 @@ export interface SendTransactionIn {
     flags: number
     payload: string
 }
-
 
 export interface SubmitTransactionIn {
     dest: string
@@ -33,7 +31,6 @@ export interface SubmitTransactionResult extends ResultOfCall {
 export interface SubmitTransactionOut extends ResultOfCall {
     transId: string
 }
-
 
 export interface ConfirmTransactionIn {
     transactionId: string
