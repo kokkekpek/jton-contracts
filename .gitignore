@@ -1,0 +1,14 @@
+# Node modules
+node_modules
+
+# Yarn
+*.log
+
+# TypeScript Compilator
+*.tsbuildinfo
+
+# Output
+dist
+
+# NPM
+package-lock.json

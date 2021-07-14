@@ -1,0 +1,31 @@
+{
+  "name": "jton-contracts",
+  "version": "0.0.1",
+  "description": "jTON contracts",
+  "main": "dist/index",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kokkekpek/jton-contracts.git"
+  },
+  "keywords": [
+    "Free",
+    "TON",
+    "Freeton",
+    "Library",
+    "Framework",
+    "TypeScript",
+    "jTON",
+    "Contracts",
+    "Smart-contract",
+    "Solidity",
+    "Wparred",
+    "Wparrer",
+    "TVM"
+  ],
+  "author": "@kokkekpek",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/kokkekpek/jton-contracts/issues"
+  },
+  "homepage": "https://github.com/kokkekpek/jton-contracts#readme"
+}
