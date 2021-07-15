@@ -30,9 +30,11 @@ npm i jton-contracts
 ```
 
 ## Contracts
+* kokkekpek
+  * [Idle](https://github.com/kokkekpek/jton-contracts/tree/master/src/kokkekpek/Idle/contract)
 * tonlabs
-    * [GiverV2](https://github.com/tonlabs/tonos-se/tree/master/contracts/giver_v2)
-    * [SafeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/safemultisig)
+  * [GiverV2](https://github.com/tonlabs/tonos-se/tree/master/contracts/giver_v2)
+  * [SafeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/safemultisig)
     
 ## Using
 **Example**
