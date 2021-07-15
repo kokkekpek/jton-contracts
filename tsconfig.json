@@ -16,14 +16,11 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "rootDir": "./src",
-    "outDir": "./dist"
+    "rootDir": "src",
+    "outDir": "dist"
   },
   "include": [
     "src/**/*.json",
     "src/**/*.ts"
-  ],
-  "exclude": [
-    "jest.config.ts"
   ]
 }
