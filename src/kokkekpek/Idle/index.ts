@@ -3,6 +3,8 @@ import {TonClient} from '@tonclient/core'
 import {Contract} from 'jton'
 import IdleContract from './contract/Idle'
 
+export {IdleContract}
+
 export interface GetIdleOut {
     idle: true
 }
