@@ -6,21 +6,21 @@ import {Contract, ResultOfCall} from 'jton'
 export {SafeMultisigWalletContract}
 
 export interface DeployIn {
-    owners: string[] | number[],
+    owners: number[] | string[],
     reqConfirms: number
 }
 
 export interface SendTransactionIn {
     dest: string
-    value: number
+    value: number | string
     bounce: boolean
-    flags: number
+    flags: number | string
     payload: string
 }
 
 export interface SubmitTransactionIn {
     dest: string
-    value: number
+    value: number | string
     bounce: boolean
     allBalance: boolean
     payload: string
@@ -38,9 +38,53 @@ export interface ConfirmTransactionIn {
     transactionId: string
 }
 
-/**
- * @see https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/safemultisig
- */
+export interface IsConfirmedIn {
+    mask: number | string
+    index: number | string
+}
+
+export interface IsConfirmedOut {
+    confirmed: boolean
+}
+
+export interface GetParametersOut {
+    maxQueuedTransactions: string,
+    maxCustodianCount: string,
+    expirationTime: string,
+    minValue: string,
+    requiredTxnConfirms: string
+}
+
+export interface GetTransactionIn {
+    transactionId: number | string
+}
+
+export interface GetTransactionOut {
+    trans: Transaction
+}
+
+export interface GetTransactionsOut {
+    transactions: Transaction[]
+}
+
+export interface Transaction {
+    id: string
+    confirmationsMask: string
+    signsRequired: string
+    signsReceived: string
+    creator: string
+    index: string
+    dest: string
+    value: string
+    sendFlags: string
+    payload: string
+    bounce: boolean
+}
+
+export interface GetTransactionIdsOut {
+    ids: string[]
+}
+
 export class SafeMultisigWallet extends Contract {
     public static readonly EXTERNAL = {
         acceptTransfer: 'acceptTransfer'
@@ -144,5 +188,33 @@ export class SafeMultisigWallet extends Contract {
 
     public async confirmTransaction(input: ConfirmTransactionIn, keys?: KeyPair): Promise<ResultOfCall> {
         return await this.call('confirmTransaction', input, keys)
+    }
+
+
+    /***********
+     * GETTERS *
+     ***********/
+    public async isConfirmed(input: IsConfirmedIn): Promise<IsConfirmedOut> {
+        return (await this.run('isConfirmed', input)).value
+    }
+
+    public async getParameters(): Promise<GetParametersOut> {
+        return (await this.run('getParameters')).value
+    }
+
+    public async getTransaction(input: GetTransactionIn): Promise<GetTransactionOut> {
+        return (await this.run('getTransaction', input)).value
+    }
+
+    public async getTransactions(): Promise<GetTransactionsOut> {
+        return (await this.run('getTransactions')).value
+    }
+
+    public async getTransactionIds(): Promise<GetTransactionIdsOut> {
+        return (await this.run('getTransactionIds')).value
+    }
+
+    public async getCustodians(): Promise<GetTransactionIdsOut> {
+        return (await this.run('getCustodians')).value
     }
 }
