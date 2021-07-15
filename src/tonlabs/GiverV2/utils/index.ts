@@ -8,12 +8,6 @@ export interface TestGiverV2Kit extends TestGiverKit {
     giver: GiverV2
 }
 
-/**
- * @param config
- * Example:
- *
- * @param keysMap
- */
 export function prepareGiverV2(config: Config, keysMap: StringMap): TestGiverV2Kit {
     const {client, timeout, giverKeys} = prepare(config, keysMap)
     return {
