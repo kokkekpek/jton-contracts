@@ -11,6 +11,7 @@ Free TON contracts in [jTON](https://www.npmjs.com/package/jton) classes.
         * [npm](#npm)
     * [Contracts](#contracts)
     * [Using](#using)
+    * [Rules for contract versions](#rules-for-contract-versions)
 
 ## Requirements
 ![requirements](docs/images/requirements.svg)
@@ -45,3 +46,20 @@ await giver.sendTransaction({
     value: 10_000_000_000
 })
 ```
+
+## Rules for contract versions
+* Link to contract in README must contain commit version
+  * `... repo/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/contracts` 👍
+  * `... repo/tree/master/contracts` 👎
+* All contract directory must contain time of commit in UTC.
+  * `YYYY-MM-DD-hh-mm` format
+    * `YYYY` year
+    * `MM` month
+    * `DD` day
+    * `hh` hours
+    * `mm` minutes.
+  * `2021-01-12-10-05` example
+* `index.ts` in directory folder must `export` last worked version of contract.
+```ts
+export * from './2021-01-12-10-05'
+``` 
