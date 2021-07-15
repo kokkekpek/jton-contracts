@@ -36,7 +36,8 @@ npm i jton-contracts
 * tonlabs
   * [GiverV2](https://github.com/tonlabs/tonos-se/tree/master/contracts/giver_v2)
   * [SafeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/safemultisig)
-    
+  * [SetcodeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/solidity/setcodemultisig)
+
 ## Using
 **Example**
 ```ts
@@ -52,13 +53,13 @@ await giver.sendTransaction({
   * `... repo/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/contracts` 👍
   * `... repo/tree/master/contracts` 👎
 * All contract directory must contain time of commit in UTC.
-  * `YYYY-MM-DD-hh-mm` format
+  * `YYYY-MM-DDThh:mm` format
     * `YYYY` year
     * `MM` month
     * `DD` day
     * `hh` hours
     * `mm` minutes.
-  * `2021-01-12-10-05` example
+  * `2021-01-12T10:05` example
 * `index.ts` in directory folder must `export` last worked version of contract.
 ```ts
 export * from './2021-01-12-10-05'
