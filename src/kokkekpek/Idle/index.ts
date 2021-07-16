@@ -6,7 +6,7 @@ import IdleContract from './contract/Idle'
 export {IdleContract}
 
 export interface GetIdleOut {
-    idle: true
+    idle: boolean
 }
 
 export class Idle extends Contract {

@@ -1,9 +1,9 @@
 import {KeyPair} from '@tonclient/core/dist/modules'
-import {DeployWithGiverV2} from '../../GiverV2/scripts/DeployWithGiverV2'
 import {Contract, x0} from 'jton'
-import {SafeMultisigWallet} from '../'
+import {SetcodeMultisigWallet} from '../'
+import {DeployWithGiverV2} from '../../../GiverV2'
 
-export class SafeMultisigWalletDeployWithGiverV2 extends DeployWithGiverV2 {
+export class SetcodeMultisigWalletDeployWithGiverV2 extends DeployWithGiverV2 {
     private _keys: KeyPair = {
         public: '',
         secret: ''
@@ -20,14 +20,14 @@ export class SafeMultisigWalletDeployWithGiverV2 extends DeployWithGiverV2 {
      */
     protected _getContract(keys: KeyPair): Contract {
         this._keys = keys
-        return new SafeMultisigWallet(this._client, this._config.net.timeout, keys)
+        return new SetcodeMultisigWallet(this._client, this._config.net.timeout, keys)
     }
 
     /**
      * Deploy contract.
      * @param contract
      */
-    protected async _deploy(contract: SafeMultisigWallet): Promise<boolean> {
+    protected async _deploy(contract: SetcodeMultisigWallet): Promise<boolean> {
         return await contract.deploy({
             owners: [x0(this._keys.public)],
             reqConfirms: 1
