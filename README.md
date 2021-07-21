@@ -40,7 +40,7 @@ npm i jton-contracts
   * [SafeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/safemultisig)
     * [2020-05-04T16:46:21Z](https://github.com/tonlabs/ton-labs-contracts/tree/8cb7be430819a2a83d72426f716756e156220ca6/solidity/safemultisig) `8cb7be430819a2a83d72426f716756e156220ca6`
   * [SetcodeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/setcodemultisig)
-    * [2020-11-19T11:36:30Z](https://github.com/tonlabs/ton-labs-contracts/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/solidity/setcodemultisig)
+    * [2020-11-19T11:36:30Z](https://github.com/tonlabs/ton-labs-contracts/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/solidity/setcodemultisig) `338ed7960ef14f2fcdd0726e405884dc7f43c66f`
 
 ## Using
 **Example**
