@@ -71,4 +71,6 @@ export * from './2020-11-19T11:36:30Z'
 ``` 
 
 ## TODO
-* Contracts update checker
+* Automate downloading checking and download last versions of contracts from another repository
+* Automate wrapping contracts
+* Docs
