@@ -34,12 +34,12 @@
   },
   "homepage": "https://github.com/kokkekpek/jton-contracts#readme",
   "devDependencies": {
-    "@types/node": "^16.3.3",
+    "@types/node": "^16.4.0",
     "ts-node": "^10.1.0",
     "tsc": "^2.0.3",
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "jton": "^0.7.0"
+    "jton": "^0.7.1"
   }
 }

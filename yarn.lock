@@ -30,15 +30,15 @@
   dependencies:
     "@tonclient/core" "^1"
 
-"@tonclient/core@^1", "@tonclient/core@^1.19.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@tonclient/core/-/core-1.19.0.tgz#291d6cbf792774f90db45f4726a62572acba4187"
-  integrity sha512-xW+CtJahZEhlD+l4ap1ilrzCedNouTfdTTA1bpvFv0FYTpUilJi138gZGq6MWY1kbfgqLG5VXAB2ClUeSqTQbw==
+"@tonclient/core@^1", "@tonclient/core@^1.20.0":
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@tonclient/core/-/core-1.20.0.tgz#cd9d684dac606437c3b524c13899150dfe04b0c3"
+  integrity sha512-k3EMn5A1phmlEO+8+KGnVri4ta+x9/40c7F9MBaPLUCBR3YB2PGEsnOaEfGbS/ktbcLaqB/ibFFWy/AgFnCQxQ==
 
 "@tonclient/lib-node@^1":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@tonclient/lib-node/-/lib-node-1.19.0.tgz#c8de5175c15ca059d7cc870e327fc4563f57d495"
-  integrity sha512-LwW80I1XtEHO6yTHQoE6fo0/+o4uIyP5Bll8Z7By512H0RSiYngxTI5Opg+XRveQO5Gl2HrsPQrasWqJxirRtw==
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/@tonclient/lib-node/-/lib-node-1.20.0.tgz#72965961548aabe154dc78c0f78ba7a635186248"
+  integrity sha512-EBg5rNM7aXO57/I74INTQaehMxRK/ivn7trmKR34Iup+H3jGFh8dCCypVHkfJCPAs7ArecRTm7O9imctdnAkcg==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"
@@ -56,14 +56,14 @@
   integrity sha512-509r2+yARFfHHE7T6Puu2jjkoycftovhXRqW328PDXTVGKihlb1P8Z9mMZH04ebyajfRY7dedfGynlrFHJUQCg==
 
 "@tsconfig/node16@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.1.tgz#a6ca6a9a0ff366af433f42f5f0e124794ff6b8f1"
-  integrity sha512-FTgBI767POY/lKNDNbIzgAX6miIDBs6NTCbdlDb8TrWovHsSvaVIZDlTqym29C6UqhzwcJx4CYr+AlrMywA0cA==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
+  integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
-"@types/node@^16.3.3":
-  version "16.3.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.3.3.tgz#0c30adff37bbbc7a50eb9b58fae2a504d0d88038"
-  integrity sha512-8h7k1YgQKxKXWckzFCMfsIwn0Y61UK6tlD6y2lOb3hTOIMlK3t9/QwHOhc81TwU+RMf0As5fj7NPjroERCnejQ==
+"@types/node@^16.4.0":
+  version "16.4.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.0.tgz#2c219eaa3b8d1e4d04f4dd6e40bc68c7467d5272"
+  integrity sha512-HrJuE7Mlqcjj+00JqMWpZ3tY8w7EUd+S0U3L1+PQSWiXZbOgyQDvi+ogoUxaHApPJq5diKxYBQwA3iIlNcPqOg==
 
 ajv@^6.12.3:
   version "6.12.6"
@@ -495,12 +495,12 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jton@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/jton/-/jton-0.7.0.tgz#ee6c171d13d164922abca3ce7b763d539da078df"
-  integrity sha512-qCItRqZ9AmimHiRRe76hELqe1C1XMHHeWFFkoDmNNSxXMbSJs8iQbmL/82LZMCagwIBFEehhfFiAqnlVojb8BQ==
+jton@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/jton/-/jton-0.7.1.tgz#5a17c64c0c61c46fa9e77b87fad797f84f80b3e3"
+  integrity sha512-xpCXJkuWvkTnDnC6+mBOcrAEoCViQlHG8IvAYodRcfQb3DSnp4YU4vnimixnKnX4E/299QtmvXB77sCT5tEmvQ==
   dependencies:
-    "@tonclient/core" "^1.19.0"
+    "@tonclient/core" "^1.20.0"
     colors "^1.4.0"
     fast-glob "^3.2.7"
     tondev "^0.7.4"
