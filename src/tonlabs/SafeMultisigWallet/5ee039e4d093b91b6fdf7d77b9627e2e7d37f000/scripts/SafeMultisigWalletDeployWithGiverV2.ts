@@ -2,6 +2,7 @@ import {KeyPair} from '@tonclient/core/dist/modules'
 import {DeployWithGiverV2} from '../../../GiverV2'
 import {Contract, x0} from 'jton'
 import {SafeMultisigWallet} from '../'
+import {ResultOfProcessMessage} from '@tonclient/core'
 
 export class SafeMultisigWalletDeployWithGiverV2 extends DeployWithGiverV2 {
     private _keys: KeyPair = {
@@ -27,7 +28,7 @@ export class SafeMultisigWalletDeployWithGiverV2 extends DeployWithGiverV2 {
      * Deploy contract.
      * @param contract
      */
-    protected async _deploy(contract: SafeMultisigWallet): Promise<boolean> {
+    protected async _deploy(contract: SafeMultisigWallet): Promise<ResultOfProcessMessage> {
         return await contract.deploy({
             owners: [x0(this._keys.public)],
             reqConfirms: 1

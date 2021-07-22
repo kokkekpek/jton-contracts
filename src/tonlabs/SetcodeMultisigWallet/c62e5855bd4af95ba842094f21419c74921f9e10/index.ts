@@ -1,5 +1,5 @@
 import SetcodeMultisigWalletContract from './contract/SetcodeMultisigWallet'
-import {AbiContract, KeyPair} from '@tonclient/core/dist/modules'
+import {AbiContract, KeyPair, ResultOfProcessMessage} from '@tonclient/core/dist/modules'
 import {TonClient} from '@tonclient/core'
 import {Contract, ResultOfCall} from 'jton'
 
@@ -151,8 +151,8 @@ export class SetcodeMultisigWallet extends Contract {
     /**********
      * DEPLOY *
      **********/
-    public async deploy(input: DeployIn): Promise<boolean> {
-        return await super.deploy(input)
+    public async deploy(input: DeployIn, timeout?: number): Promise<ResultOfProcessMessage> {
+        return await super.deploy(input, timeout)
     }
 
 

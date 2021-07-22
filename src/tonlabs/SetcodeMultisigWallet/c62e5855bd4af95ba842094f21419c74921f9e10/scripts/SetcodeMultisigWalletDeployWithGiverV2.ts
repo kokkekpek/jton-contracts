@@ -1,4 +1,4 @@
-import {KeyPair} from '@tonclient/core/dist/modules'
+import {KeyPair, ResultOfProcessMessage} from '@tonclient/core/dist/modules'
 import {Contract, x0} from 'jton'
 import {SetcodeMultisigWallet} from '../'
 import {DeployWithGiverV2} from '../../../GiverV2'
@@ -27,7 +27,7 @@ export class SetcodeMultisigWalletDeployWithGiverV2 extends DeployWithGiverV2 {
      * Deploy contract.
      * @param contract
      */
-    protected async _deploy(contract: SetcodeMultisigWallet): Promise<boolean> {
+    protected async _deploy(contract: SetcodeMultisigWallet): Promise<ResultOfProcessMessage> {
         return await contract.deploy({
             owners: [x0(this._keys.public)],
             reqConfirms: 1

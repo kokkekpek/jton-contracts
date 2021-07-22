@@ -1,6 +1,6 @@
 import SafeMultisigWalletContract from './contract/SafeMultisigWallet'
 import {AbiContract, KeyPair} from '@tonclient/core/dist/modules'
-import {TonClient} from '@tonclient/core'
+import {TonClient, ResultOfProcessMessage} from '@tonclient/core'
 import {Contract, ResultOfCall} from 'jton'
 
 export * from './scripts'
@@ -113,7 +113,7 @@ export class SafeMultisigWallet extends Contract {
     /**********
      * DEPLOY *
      **********/
-    public async deploy(input: DeployIn): Promise<boolean> {
+    public async deploy(input: DeployIn): Promise<ResultOfProcessMessage> {
         return await super.deploy(input)
     }
 
