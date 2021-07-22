@@ -10,8 +10,7 @@ Free TON contracts in [jTON](https://www.npmjs.com/package/jton) classes.
     * [yarn](#yarn)
     * [npm](#npm)
   * [Contracts](#contracts)
-  * [Using](#using)
-  * [Rules for contract versions](#rules-for-contract-versions)
+  * [Example](#example)
   * [TODO](#todo)
 
 ## Requirements
@@ -65,14 +64,23 @@ npm i jton-contracts
     * commits
       * `c62e5855bd4af95ba842094f21419c74921f9e10` - 2020-05-07T08:58:05Z
 
-## Using
-**Example**
+## Example
 ```ts
-const giver: GiverV2 = new GiverV2(client, 30_000, GiverV2SeKeys)
-await giver.sendTransaction({
+import {GiverV2, GiverV2SeKeys} from 'jton-contracts/dist/tonlabs/GiverV2'
+import {TonClient} from '@tonclient/core'
+import {libNode} from '@tonclient/lib-node'
+import {createClient} from 'jton/src/utils/index'
+
+async function run(): Promise<void> {
+  TonClient.useBinaryLibrary(libNode)
+  const client: TonClient = createClient('http://localhost:8080')
+  const giverV2: GiverV2 = new GiverV2(client, 30_000, GiverV2SeKeys)
+  await giverV2.sendTransaction({
     dest: '0:0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff',
     value: 10_000_000_000
-})
+  })
+}
+run().then().catch(e => console.log(e))
 ```
 
 ## TODO
