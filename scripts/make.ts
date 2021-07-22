@@ -16,6 +16,6 @@ make({
         'src/tonlabs/SetcodeMultisigWallet/c62e5855bd4af95ba842094f21419c74921f9e10/contract/SetcodeMultisigWallet'
     ],
     compiler: '0.47.0',
-    linker: '0.11.84',
+    linker: '0.11.86',
     stdlib: '0.47.0'
 }).catch((e: any) => console.log(e))
