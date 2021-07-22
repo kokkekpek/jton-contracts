@@ -7,6 +7,8 @@ make({
         'src/kokkekpek/Idle/source/Idle'
     ],
     wrap: [
+        'src/broxus/fungibleToken/74905260499d79cf7cb0d89a6eb572176fc1fcd5/contracts/RootTokenContract',
+        'src/broxus/fungibleToken/74905260499d79cf7cb0d89a6eb572176fc1fcd5/contracts/TONTokenWallet',
         'src/kokkekpek/Idle/b911fc8f70d58477d53bf514e693bf76f96efd25/contract/Idle',
         'src/tonlabs/GiverV2/8a2bc005cfec4ecd770d50b074179e525b76513b/contract/GiverV2',
         'src/tonlabs/GiverV2/06b351a91f104943ec10fed8ae262e54ecaae871/contract/GiverV2',

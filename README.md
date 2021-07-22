@@ -31,6 +31,22 @@ npm i jton-contracts
 ```
 
 ## Contracts
+* broxus
+  * fungibleToken
+    * source
+      * **RootTokenContract**
+        * [sol](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/contracts/RootTokenContract.sol)
+        * [abi](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/build/RootTokenContract.abi.json)
+        * [tvc](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/build/RootTokenContract.tvc)
+      * **TONTokenWallet**
+        * [sol](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/contracts/TONTokenWallet.sol)
+        * [abi](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/build/TONTokenWallet.abi.json)
+        * [tvc](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/build/TONTokenWallet.tvc)
+      * **include**
+        * [interfaces/*.sol](https://github.com/broxus/ton-eth-bridge-token-contracts/tree/master/free-ton/contracts/interfaces)
+        * [libraries/*.sol](https://github.com/broxus/ton-eth-bridge-token-contracts/tree/master/free-ton/contracts/libraries)
+    * commits
+      * `74905260499d79cf7cb0d89a6eb572176fc1fcd5` - 2021-05-18T16:00:52Z
 * kokkekpek
   * **Idle**
     * source
