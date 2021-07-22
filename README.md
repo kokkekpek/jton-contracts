@@ -33,14 +33,37 @@ npm i jton-contracts
 
 ## Contracts
 * kokkekpek
-  * [Idle](https://github.com/kokkekpek/jton-contracts/tree/master/src/kokkekpek/Idle/contract)
+  * **Idle**
+    * source
+      * [sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.sol)
+      * [abi](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.abi.json)
+      * [tvc](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.tvc)
+    * commits
+      * `b911fc8f70d58477d53bf514e693bf76f96efd25` - 2021-07-22T05:17:01Z
 * tonlabs
-  * [GiverV2](https://github.com/tonlabs/tonos-se/tree/master/contracts/giver_v2)
-    * [2021-04-28T09:41:28Z](https://github.com/tonlabs/tonos-se/tree/8a2bc005cfec4ecd770d50b074179e525b76513b/contracts/giver_v2) `8a2bc005cfec4ecd770d50b074179e525b76513b`
-  * [SafeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/safemultisig)
-    * [2020-05-04T16:46:21Z](https://github.com/tonlabs/ton-labs-contracts/tree/8cb7be430819a2a83d72426f716756e156220ca6/solidity/safemultisig) `8cb7be430819a2a83d72426f716756e156220ca6`
-  * [SetcodeMultisigWallet](https://github.com/tonlabs/ton-labs-contracts/tree/master/solidity/setcodemultisig)
-    * [2020-11-19T11:36:30Z](https://github.com/tonlabs/ton-labs-contracts/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/solidity/setcodemultisig) `338ed7960ef14f2fcdd0726e405884dc7f43c66f`
+  * **GiverV2**
+    * source
+      * [sol](https://github.com/tonlabs/tonos-se/blob/master/contracts/giver_v2/GiverV2.sol)
+      * [abi](https://github.com/tonlabs/tonos-se/blob/master/contracts/giver_v2/GiverV2.abi.json)
+      * [tvc](https://github.com/tonlabs/tonos-se/blob/master/contracts/giver_v2/GiverV2.tvc)
+      * [keys](https://github.com/tonlabs/tonos-se/blob/master/contracts/giver_v2/GiverV2.keys.json)
+    * commits
+      * `8a2bc005cfec4ecd770d50b074179e525b76513b` - 2021-04-28T09:41:28Z **✔**
+      * `06b351a91f104943ec10fed8ae262e54ecaae871` - 2021-07-13T16:54:19Z
+  * **SafeMultisigWallet**
+    * source
+      * [sol](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/safemultisig/SafeMultisigWallet.sol)
+      * [abi](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/safemultisig/SafeMultisigWallet.abi.json)
+      * [tvc](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/safemultisig/SafeMultisigWallet.tvc)
+    * commits
+      * `5ee039e4d093b91b6fdf7d77b9627e2e7d37f000` - 2020-05-04T16:46:21Z
+  * SetcodeMultisigWallet
+    * source
+      * [sol](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/setcodemultisig/SetcodeMultisigWallet.sol)
+      * [abi](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/setcodemultisig/SetcodeMultisigWallet.abi.json)
+      * [tvc](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/setcodemultisig/SetcodeMultisigWallet.tvc)
+    * commits
+      * `c62e5855bd4af95ba842094f21419c74921f9e10` - 2020-05-07T08:58:05Z
 
 ## Using
 **Example**
@@ -51,24 +74,6 @@ await giver.sendTransaction({
     value: 10_000_000_000
 })
 ```
-
-## Rules for contract versions
-* Link to contract in README must contain commit version
-  * `... repo/tree/338ed7960ef14f2fcdd0726e405884dc7f43c66f/contracts` 👍
-  * `... repo/tree/master/contracts` 👎
-* All contract directory must contain time of commit in UTC.
-  * `YYYY-MM-DDThh:mm:ssZ` format
-    * `YYYY` year
-    * `MM` month
-    * `DD` day
-    * `hh` hours
-    * `mm` minutes.
-    * `ss` seconds.
-  * `2020-11-19T11:36:30Z` example
-* `index.ts` in directory folder must `export` last worked version of contract.
-```ts
-export * from './2020-11-19T11:36:30Z'
-``` 
 
 ## TODO
 * Automate checking and downloading the latest versions of contracts from other repositories
