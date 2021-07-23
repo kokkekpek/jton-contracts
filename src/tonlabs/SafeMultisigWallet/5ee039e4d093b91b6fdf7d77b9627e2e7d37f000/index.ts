@@ -1,6 +1,6 @@
 import SafeMultisigWalletContract from './contract/SafeMultisigWallet'
+import {ResultOfProcessMessage, TonClient} from '@tonclient/core'
 import {AbiContract, KeyPair} from '@tonclient/core/dist/modules'
-import {TonClient, ResultOfProcessMessage} from '@tonclient/core'
 import {Contract, ResultOfCall} from 'jton'
 
 export * from './scripts'
@@ -44,10 +44,6 @@ export interface IsConfirmedIn {
     index: number | string
 }
 
-export interface IsConfirmedOut {
-    confirmed: boolean
-}
-
 export interface GetParametersOut {
     maxQueuedTransactions: string,
     maxCustodianCount: string,
@@ -58,14 +54,6 @@ export interface GetParametersOut {
 
 export interface GetTransactionIn {
     transactionId: number | string
-}
-
-export interface GetTransactionOut {
-    trans: Transaction
-}
-
-export interface GetTransactionsOut {
-    transactions: Transaction[]
 }
 
 export interface Transaction {
@@ -80,14 +68,6 @@ export interface Transaction {
     sendFlags: string
     payload: string
     bounce: boolean
-}
-
-export interface GetTransactionIdsOut {
-    ids: string[]
-}
-
-export interface GetCustodiansOut {
-    custodians: Custodian[]
 }
 
 export interface Custodian {
@@ -113,8 +93,8 @@ export class SafeMultisigWallet extends Contract {
     /**********
      * DEPLOY *
      **********/
-    public async deploy(input: DeployIn): Promise<ResultOfProcessMessage> {
-        return await super.deploy(input)
+    public async deploy(input: DeployIn, timeout?: number): Promise<ResultOfProcessMessage> {
+        return await super.deploy(input, timeout)
     }
 
 
@@ -204,27 +184,27 @@ export class SafeMultisigWallet extends Contract {
     /***********
      * GETTERS *
      ***********/
-    public async isConfirmed(input: IsConfirmedIn): Promise<IsConfirmedOut> {
-        return (await this.run('isConfirmed', input)).value
+    public async isConfirmed(input: IsConfirmedIn): Promise<boolean> {
+        return (await this.run('isConfirmed', input)).value.confirmed
     }
 
     public async getParameters(): Promise<GetParametersOut> {
         return (await this.run('getParameters')).value
     }
 
-    public async getTransaction(input: GetTransactionIn): Promise<GetTransactionOut> {
-        return (await this.run('getTransaction', input)).value
+    public async getTransaction(input: GetTransactionIn): Promise<Transaction> {
+        return (await this.run('getTransaction', input)).value.trans
     }
 
-    public async getTransactions(): Promise<GetTransactionsOut> {
-        return (await this.run('getTransactions')).value
+    public async getTransactions(): Promise<Transaction[]> {
+        return (await this.run('getTransactions')).value.transactions
     }
 
-    public async getTransactionIds(): Promise<GetTransactionIdsOut> {
-        return (await this.run('getTransactionIds')).value
+    public async getTransactionIds(): Promise<string[]> {
+        return (await this.run('getTransactionIds')).value.ids
     }
 
-    public async getCustodians(): Promise<GetCustodiansOut> {
-        return (await this.run('getCustodians')).value
+    public async getCustodians(): Promise<Custodian[]> {
+        return (await this.run('getCustodians')).value.custodians
     }
 }
