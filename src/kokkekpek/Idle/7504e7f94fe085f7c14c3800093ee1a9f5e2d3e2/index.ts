@@ -1,6 +1,6 @@
 import {KeyPair} from '@tonclient/core/dist/modules'
 import {TonClient} from '@tonclient/core'
-import {Contract} from 'jton'
+import {Contract, ZERO_ANSWER_ID} from 'jton'
 import IdleContract from '../source/Idle'
 
 export {IdleContract}
@@ -19,6 +19,6 @@ export class Idle extends Contract {
      * GETTERS *
      ***********/
     public async isIdle(): Promise<boolean> {
-        return (await this.run('isIdle', {_answer_id: 0})).value.value0
+        return (await this.run('isIdle', ZERO_ANSWER_ID)).value.value0
     }
 }
