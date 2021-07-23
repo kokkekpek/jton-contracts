@@ -1,13 +1,15 @@
 pragma ton-solidity >= 0.47.0;
 
+import "./interfaces/IIdle.sol";
+
 /**
  * Contract for testing setCode and onCodeUpgrade functionality.
  */
-contract Idle {
+contract Idle is IIdle {
     /********
      * PURE *
      ********/
-    function isIdle() public pure returns(bool idle) {
+    function isIdle() override external pure responsible returns (bool) {
         return true;
     }
 

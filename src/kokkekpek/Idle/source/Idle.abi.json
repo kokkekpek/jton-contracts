@@ -5,9 +5,10 @@
 		{
 			"name": "isIdle",
 			"inputs": [
+				{"name":"_answer_id","type":"uint32"}
 			],
 			"outputs": [
-				{"name":"idle","type":"bool"}
+				{"name":"value0","type":"bool"}
 			]
 		},
 		{

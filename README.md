@@ -53,6 +53,8 @@ npm i jton-contracts
       * [sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.sol)
       * [abi](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.abi.json)
       * [tvc](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.tvc)
+    * **include**
+      * [interfaces/*.sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/interfaces)
     * commits
       * `b911fc8f70d58477d53bf514e693bf76f96efd25` - 2021-07-22T05:17:01Z
 * tonlabs
