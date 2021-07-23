@@ -19,13 +19,13 @@ export interface UpgradeIn {
     code: string
 }
 
+export interface GetMessagesResult extends ResultOfCall {
+    out: GetMessagesOut[]
+}
+
 export interface GetMessagesOut {
     hash: string
     expireAt: string
-}
-
-export interface GetMessagesResult extends ResultOfCall {
-    out: GetMessagesOut[]
 }
 
 /**
@@ -45,21 +45,16 @@ export class GiverV2 extends Contract {
     /**********
      * PUBLIC *
      **********/
-    public sendTransaction(
-        input: SendTransactionIn,
-        keys?: KeyPair
-    ): Promise<ResultOfCall> {
+    public sendTransaction(input: SendTransactionIn, keys?: KeyPair): Promise<ResultOfCall> {
         input.bounce = input.bounce ?? false
         return this.call('sendTransaction', input, keys)
     }
 
-    public async upgrade(
-        input: UpgradeIn
-    ): Promise<ResultOfCall> {
-        return await this.call('upgrade', input)
+    public async upgrade(input: UpgradeIn, keys?: KeyPair): Promise<ResultOfCall> {
+        return await this.call('upgrade', input, keys)
     }
 
-    public async getMessages(): Promise<GetMessagesResult> {
-        return await this.call('getMessages')
+    public async getMessages(keys?: KeyPair): Promise<GetMessagesResult> {
+        return await this.call('getMessages', {}, keys)
     }
 }
