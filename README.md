@@ -57,6 +57,7 @@ npm i jton-contracts
       * [interfaces/*.sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/interfaces)
     * commits
       * `b911fc8f70d58477d53bf514e693bf76f96efd25` - 2021-07-22T05:17:01Z
+      * `7504e7f94fe085f7c14c3800093ee1a9f5e2d3e2` - 2021-07-23T06:13:09Z **✔**
 * tonlabs
   * **GiverV2**
     * source
