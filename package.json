@@ -40,6 +40,6 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "jton": "^0.8.1"
+    "jton": "^0.8.2"
   }
 }

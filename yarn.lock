@@ -495,10 +495,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jton@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/jton/-/jton-0.8.1.tgz#664ec1ded500a1b83d56b7ea6d511117fa589abe"
-  integrity sha512-vciguJTjh316c+kJCRu+BxMrb6mDh/WRZ10VEzlhkIis1EMwL3ZbnChIQdD7eqr9Onj8wv9MmPL6kZ7U+Rlv8w==
+jton@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/jton/-/jton-0.8.2.tgz#8bfcf4ff3d9b3aa40508e1bff59f839355dedb2f"
+  integrity sha512-aNmGCOCYDVBOzPtHLslWYzuueBefw4QFyoDHvh+Dj9C+rDYAoFTOoAdao9K4nrpJcUpOApWnzD9mipwmEjKY3Q==
   dependencies:
     "@tonclient/core" "^1.20.0"
     colors "^1.4.0"
