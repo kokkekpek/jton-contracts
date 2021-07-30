@@ -20,10 +20,12 @@ export interface UpgradeIn {
 }
 
 export interface GetMessagesResult extends ResultOfCall {
-    out: GetMessagesOut[]
+    out: {
+        messages: Message[]
+    }
 }
 
-export interface GetMessagesOut {
+export interface Message {
     hash: string
     expireAt: string
 }
