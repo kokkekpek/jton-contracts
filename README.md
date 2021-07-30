@@ -32,7 +32,7 @@ npm i jton-contracts
 
 ## Contracts
 * broxus
-  * fungibleToken: **RootTokenContract** **TONTokenWallet**
+  * fungibleToken: **RootTokenContract**, **TONTokenWallet**
     * source
       * [contracts/RootTokenContract.sol](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/contracts/RootTokenContract.sol)
       * [build/RootTokenContract.abi.json](https://github.com/broxus/ton-eth-bridge-token-contracts/blob/master/free-ton/build/RootTokenContract.abi.json)
@@ -80,7 +80,7 @@ npm i jton-contracts
       * [SafeMultisigWallet.tvc](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/safemultisig/SafeMultisigWallet.tvc)
     * commits
       * `5ee039e4d093b91b6fdf7d77b9627e2e7d37f000` - 2020-05-04T16:46:21Z
-  * SetcodeMultisigWallet
+  * **SetcodeMultisigWallet**
     * source
       * [SetcodeMultisigWallet.sol](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/setcodemultisig/SetcodeMultisigWallet.sol)
       * [SetcodeMultisigWallet.abi.json](https://github.com/tonlabs/ton-labs-contracts/blob/master/solidity/setcodemultisig/SetcodeMultisigWallet.abi.json)
