@@ -6,7 +6,7 @@ import IdleContract from '../source/Idle'
 export {IdleContract}
 
 export class Idle extends Contract {
-    public constructor(client: TonClient, keys: KeyPair, address: string, timeout?: number) {
+    constructor(client: TonClient, keys: KeyPair, address: string, timeout?: number) {
         super(client, {
             abi: IdleContract.abi,
             keys: keys,
