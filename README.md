@@ -53,11 +53,21 @@ npm i jton-contracts
       * [sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.sol)
       * [abi](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.abi.json)
       * [tvc](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/Idle.tvc)
-    * **include**
-      * [interfaces/*.sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/interfaces)
+      * **include**
+        * [interfaces/*.sol](https://github.com/kokkekpek/jton-contracts/blob/master/src/kokkekpek/Idle/source/interfaces)
     * commits
       * `b911fc8f70d58477d53bf514e693bf76f96efd25` - 2021-07-22T05:17:01Z
       * `7504e7f94fe085f7c14c3800093ee1a9f5e2d3e2` - 2021-07-23T06:13:09Z **✔**
+* SolderingArmor
+  * **HighloadSinglesig**
+    * source
+      * [sol](https://github.com/SolderingArmor/highload-singlesig-wallet/blob/master/contracts/HighloadSinglesig.sol)
+      * [abi](https://github.com/SolderingArmor/highload-singlesig-wallet/blob/master/bin/HighloadSinglesig.abi.json)
+      * [tvc](https://github.com/SolderingArmor/highload-singlesig-wallet/blob/master/bin/HighloadSinglesig.tvc)
+      * **include**
+        * [interfaces/*.sol](https://github.com/SolderingArmor/highload-singlesig-wallet/tree/master/interfaces)
+    * commits
+      * `b6ec1ecd4d1c66e44a99050f33b084323250a582` - 2021-07-30T00:05:55Z
 * tonlabs
   * **GiverV2**
     * source
