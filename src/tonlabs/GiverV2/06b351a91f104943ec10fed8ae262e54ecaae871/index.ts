@@ -44,7 +44,7 @@ export class GiverV2 extends Contract {
     /**********
      * PUBLIC *
      **********/
-    public sendTransaction(input: SendTransactionIn, keys?: KeyPair): Promise<ResultOfCall> {
+    public async sendTransaction(input: SendTransactionIn, keys?: KeyPair): Promise<ResultOfCall> {
         input.bounce = input.bounce ?? false
         return this.call('sendTransaction', input, keys)
     }
