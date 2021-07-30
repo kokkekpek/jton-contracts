@@ -1,7 +1,7 @@
 import {Contract, ResultOfCall} from 'jton'
 import {TonClient} from '@tonclient/core'
 import {KeyPair} from '@tonclient/core/dist/modules'
-import HighloadSinglesigContract from './contracts/contracts/HighloadSinglesig'
+import HighloadSinglesigContract from './source/bin/HighloadSinglesig'
 
 export {HighloadSinglesigContract}
 

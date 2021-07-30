@@ -1,7 +1,7 @@
-import TONTokenWalletContract from './contracts/TONTokenWallet'
-import {TonClient} from '@tonclient/core'
-import {KeyPair} from '@tonclient/core/dist/modules'
 import {Contract, ResultOfCall, ZERO_ANSWER_ID} from 'jton'
+import {KeyPair} from '@tonclient/core/dist/modules'
+import {TonClient} from '@tonclient/core'
+import TONTokenWalletContract from './source/build/TONTokenWallet'
 
 export {TONTokenWalletContract}
 

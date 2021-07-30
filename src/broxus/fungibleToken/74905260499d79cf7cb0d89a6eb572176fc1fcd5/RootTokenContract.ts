@@ -1,7 +1,7 @@
 import {Contract, ResultOfCall, ZERO_ANSWER_ID} from 'jton'
-import {ResultOfProcessMessage, TonClient} from '@tonclient/core'
 import {KeyPair} from '@tonclient/core/dist/modules'
-import RootTokenContractContract from './contracts/RootTokenContract'
+import {ResultOfProcessMessage, TonClient} from '@tonclient/core'
+import RootTokenContractContract from './source/build/RootTokenContract'
 
 export {RootTokenContractContract}
 

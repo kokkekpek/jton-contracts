@@ -1,4 +1,4 @@
-import SafeMultisigWalletContract from './contract/SafeMultisigWallet'
+import SafeMultisigWalletContract from './source/SafeMultisigWallet'
 import {ResultOfProcessMessage, TonClient} from '@tonclient/core'
 import {KeyPair} from '@tonclient/core/dist/modules'
 import {Contract, ResultOfCall} from 'jton'

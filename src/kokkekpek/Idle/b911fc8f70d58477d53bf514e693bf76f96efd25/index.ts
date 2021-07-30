@@ -1,7 +1,7 @@
 import {KeyPair} from '@tonclient/core/dist/modules'
 import {TonClient} from '@tonclient/core'
 import {Contract} from 'jton'
-import IdleContract from '../source/Idle'
+import IdleContract from './source/Idle'
 
 export {IdleContract}
 

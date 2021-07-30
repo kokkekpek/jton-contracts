@@ -1,4 +1,4 @@
-import SetcodeMultisigWalletContract from './contract/SetcodeMultisigWallet'
+import SetcodeMultisigWalletContract from './source/SetcodeMultisigWallet'
 import {ResultOfProcessMessage, TonClient} from '@tonclient/core'
 import {KeyPair} from '@tonclient/core/dist/modules'
 import {Contract, ResultOfCall} from 'jton'

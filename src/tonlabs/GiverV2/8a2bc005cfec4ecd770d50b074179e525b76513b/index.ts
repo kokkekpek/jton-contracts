@@ -1,8 +1,8 @@
 import {KeyPair} from '@tonclient/core/dist/modules'
 import {TonClient} from '@tonclient/core'
 import {Contract, ResultOfCall} from 'jton'
-import GiverV2Contract from './contract/GiverV2'
-import GiverV2SeKeys from './contract/GiverV2.se.keys.json'
+import GiverV2Contract from './source/GiverV2'
+import GiverV2SeKeys from './source/GiverV2.se.keys.json'
 
 export * from './scripts'
 export * from './utils'
