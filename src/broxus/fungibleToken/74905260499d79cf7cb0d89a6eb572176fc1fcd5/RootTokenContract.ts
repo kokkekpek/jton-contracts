@@ -81,13 +81,13 @@ export class RootTokenContract extends Contract {
         transferOwner: 'transferOwner'
     }
 
-    constructor(client: TonClient, timeout: number, keys: KeyPair, initialData: InitialData) {
-        super(client, timeout, {
+    constructor(client: TonClient, keys: KeyPair, initialData: InitialData, timeout?: number) {
+        super(client, {
             abi: RootTokenContractContract.abi,
             tvc: RootTokenContractContract.tvc,
             initialData: initialData,
             keys: keys
-        })
+        }, timeout)
     }
 
 

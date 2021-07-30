@@ -4,19 +4,24 @@ import {GiverV2} from '../'
 
 export class DeployWithGiverV2 extends DeployWithGiver {
     /**
-     * Create and return giver object.
+     * Creates and returns Giver.
      * @param keys
      * Example:
      *     {
      *         public: '0x0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff',
      *         secret: '0x0000000011111111222222223333333344444444555555556666666677777777'
      *     }
+     * @param timeout Time in milliseconds. How much time need wait a collection from graphql.
+     * Examples:
+     *     3000
+     *     5000
      */
-    protected _getGiver(keys: KeyPair): Contract {
-        return new GiverV2(this._client, this._config.net.timeout, keys)
+    protected _getGiver(keys: KeyPair, timeout?: number): Contract {
+        return new GiverV2(this._client, keys, timeout)
     }
 
     /**
+     * Sends money from giver to target address before deploying.
      * @param giver
      * @param address
      * Example:

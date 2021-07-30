@@ -102,11 +102,15 @@ import {createClient} from 'jton/src/utils/index'
 
 async function run(): Promise<void> {
   TonClient.useBinaryLibrary(libNode)
-  const client: TonClient = createClient('http://localhost:8080')
-  const giverV2: GiverV2 = new GiverV2(client, 30_000, GiverV2SeKeys)
+  const client: TonClient = new TonClient({
+    network: {
+      server_address: 'http://localhost:8080'
+    }
+  })
+  const giverV2: GiverV2 = new GiverV2(client, GiverV2SeKeys)
   await giverV2.sendTransaction({
     dest: '0:0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff',
-    value: 10_000_000_000
+    value: 1_000_000_000
   })
 }
 run().then().catch(e => console.log(e))
@@ -115,4 +119,5 @@ run().then().catch(e => console.log(e))
 ## TODO
 * Automate checking and downloading the latest versions of contracts from other repositories
 * Automate contract wrapping
+* Tests
 * Docs

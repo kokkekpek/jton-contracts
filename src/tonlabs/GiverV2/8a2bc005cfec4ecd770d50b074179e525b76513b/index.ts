@@ -20,32 +20,31 @@ export interface UpgradeIn {
 }
 
 export interface GetMessagesResult extends ResultOfCall {
-    out: GetMessagesOut[]
+    out: {
+        messages: Message[]
+    }
 }
 
-export interface GetMessagesOut {
+export interface Message {
     hash: string
     expireAt: string
 }
 
-/**
- * @see https://github.com/tonlabs/tonos-se/tree/master/contracts/giver_v2
- */
 export class GiverV2 extends Contract {
-    constructor(client: TonClient, timeout: number, keys: KeyPair) {
-        super(client, timeout, {
+    constructor(client: TonClient, keys: KeyPair, timeout?: number) {
+        super(client, {
             abi: GiverV2Contract.abi,
             initialData: {},
             keys: keys,
             tvc: GiverV2Contract.tvc
-        })
+        }, timeout)
     }
 
 
     /**********
      * PUBLIC *
      **********/
-    public async sendTransaction(input: SendTransactionIn, keys?: KeyPair): Promise<ResultOfCall> {
+    public sendTransaction(input: SendTransactionIn, keys?: KeyPair): Promise<ResultOfCall> {
         input.bounce = input.bounce ?? false
         return this.call('sendTransaction', input, keys)
     }

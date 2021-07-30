@@ -30,17 +30,14 @@ export interface Message {
     expireAt: string
 }
 
-/**
- * @see https://github.com/tonlabs/tonos-se/tree/master/contracts/giver_v2
- */
 export class GiverV2 extends Contract {
-    constructor(client: TonClient, timeout: number, keys: KeyPair) {
-        super(client, timeout, {
+    constructor(client: TonClient, keys: KeyPair, timeout?: number) {
+        super(client, {
             abi: GiverV2Contract.abi,
             initialData: {},
             keys: keys,
             tvc: GiverV2Contract.tvc
-        })
+        }, timeout)
     }
 
 

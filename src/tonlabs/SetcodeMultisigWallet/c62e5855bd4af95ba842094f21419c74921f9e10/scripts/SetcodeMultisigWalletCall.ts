@@ -1,9 +1,9 @@
 import {AbiContract, KeyPair} from '@tonclient/core/dist/modules'
-import {Call, CallConfig, Contract, readAbi, readBoolean, readInt, readJson, StringMap} from 'jton'
+import {Call, CallConfig, Contract, getPayload, readAbi, readBoolean, readInt, readJson, StringMap} from 'jton'
 import {SetcodeMultisigWallet} from '../'
 
 export enum PARAMETERS {
-    ADDRESS = 'address',
+    DEST = 'dest',
     VALUE = 'value',
     BOUNCE = 'bounce',
     FLAGS = 'flags',
@@ -30,16 +30,20 @@ export class SetcodeMultisigWalletCall extends Call {
     }
 
     /**
-     * Create and return contract object.
+     * Creates and returns contract.
      * @param keys
      * Example:
      *     {
      *         public: '0x0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff',
      *         secret: '0x0000000011111111222222223333333344444444555555556666666677777777'
      *     }
+     * @param timeout Time in milliseconds. How much time need wait a collection from graphql.
+     * Examples:
+     *     3000
+     *     5000
      */
-    protected _getContract(keys: KeyPair): Contract {
-        return new SetcodeMultisigWallet(this._client, this._config.net.timeout, keys)
+    protected _getContract(keys: KeyPair, timeout?: number): Contract {
+        return new SetcodeMultisigWallet(this._client, keys, timeout)
     }
 
     /**
@@ -49,12 +53,16 @@ export class SetcodeMultisigWalletCall extends Call {
      *     {
      *         address: '0:0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff'
      *     }
+     * @param timeout Time in milliseconds. How much time need wait a collection from graphql.
+     * Examples:
+     *     3000
+     *     5000
      */
-    protected _getTargetContract(map: StringMap): Contract {
-        return new Contract(this._client, this._config.net.timeout, {
+    protected _getTargetContract(map: StringMap, timeout?: number): Contract {
+        return new Contract(this._client, {
             abi: {},
-            address: map[PARAMETERS.ADDRESS]
-        })
+            address: map[PARAMETERS.DEST]
+        }, timeout)
     }
 
     /**
@@ -75,13 +83,19 @@ export class SetcodeMultisigWalletCall extends Call {
      *     }
      */
     protected async _call(contract: SetcodeMultisigWallet, map: StringMap, keys: KeyPair): Promise<void> {
-        const address: string = map[PARAMETERS.ADDRESS]
+        const dest: string = map[PARAMETERS.DEST]
         const value: number = readInt(map[PARAMETERS.VALUE])
         const bounce: boolean = readBoolean(map[PARAMETERS.BOUNCE])
         const flags: number = readInt(map[PARAMETERS.FLAGS])
         const abi: AbiContract = readAbi(map[PARAMETERS.PATH_TO_ABI])
         const method: string = map[PARAMETERS.METHOD]
         const input: Object = readJson(map[PARAMETERS.PARAMETERS])
-        await contract.callAnotherContract(address, value, bounce, flags, abi, method, input, keys)
+        await contract.sendTransaction({
+            dest,
+            value,
+            bounce,
+            flags,
+            payload: await getPayload(this._client, abi, method, input)
+        }, keys)
     }
 }

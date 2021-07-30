@@ -104,13 +104,13 @@ export class TONTokenWallet extends Contract {
         destroy: 'destroy'
     }
 
-    constructor(client: TonClient, timeout: number, keys: KeyPair, initialData: InitialData) {
-        super(client, timeout, {
+    constructor(client: TonClient, keys: KeyPair, initialData: InitialData, timeout?: number) {
+        super(client, {
             abi: TONTokenWalletContract.abi,
             tvc: TONTokenWalletContract.tvc,
             initialData: initialData,
             keys: keys
-        })
+        }, timeout)
     }
 
 

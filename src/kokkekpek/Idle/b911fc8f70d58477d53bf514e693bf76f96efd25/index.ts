@@ -10,12 +10,12 @@ export interface GetIdleOut {
 }
 
 export class Idle extends Contract {
-    public constructor(client: TonClient, timeout: number, keys: KeyPair, address: string) {
-        super(client, timeout, {
+    public constructor(client: TonClient, keys: KeyPair, address: string, timeout?: number) {
+        super(client, {
             abi: IdleContract.abi,
             keys: keys,
             address: address
-        })
+        }, timeout)
     }
 
 

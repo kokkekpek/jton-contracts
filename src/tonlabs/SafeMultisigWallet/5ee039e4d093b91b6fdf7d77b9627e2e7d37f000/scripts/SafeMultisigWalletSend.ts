@@ -1,9 +1,9 @@
 import {KeyPair} from '@tonclient/core/dist/modules'
-import {Call, CallConfig, Contract, readBoolean, readInt, StringMap} from 'jton'
+import {Call, CallConfig, Contract, getPayloadToTransfer, readBoolean, readInt, StringMap} from 'jton'
 import {SafeMultisigWallet} from '../'
 
 export enum PARAMETERS {
-    ADDRESS = 'address',
+    DEST = 'dest',
     VALUE = 'value',
     BOUNCE = 'bounce',
     FLAGS = 'flags',
@@ -28,16 +28,20 @@ export class SafeMultisigWalletSend extends Call {
     }
 
     /**
-     * Create and return contract object.
+     * Creates and returns contract.
      * @param keys
      * Example:
      *     {
      *         public: '0x0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff',
      *         secret: '0x0000000011111111222222223333333344444444555555556666666677777777'
      *     }
+     * @param timeout Time in milliseconds. How much time need wait a collection from graphql.
+     * Examples:
+     *     3000
+     *     5000
      */
-    protected _getContract(keys: KeyPair): Contract {
-        return new SafeMultisigWallet(this._client, this._config.net.timeout, keys)
+    protected _getContract(keys: KeyPair, timeout?: number): Contract {
+        return new SafeMultisigWallet(this._client, keys, timeout)
     }
 
     /**
@@ -47,12 +51,16 @@ export class SafeMultisigWalletSend extends Call {
      *     {
      *         address: '0:0000111122223333444455556666777788889999aaaabbbbccccddddeeeeffff'
      *     }
+     * @param timeout Time in milliseconds. How much time need wait a collection from graphql.
+     * Examples:
+     *     3000
+     *     5000
      */
-    protected _getTargetContract(map: StringMap): Contract {
-        return new Contract(this._client, this._config.net.timeout, {
+    protected _getTargetContract(map: StringMap, timeout?: number): Contract {
+        return new Contract(this._client, {
             abi: {},
-            address: map[PARAMETERS.ADDRESS]
-        })
+            address: map[PARAMETERS.DEST]
+        }, timeout)
     }
 
     /**
@@ -73,11 +81,17 @@ export class SafeMultisigWalletSend extends Call {
      *     }
      */
     protected async _call(contract: SafeMultisigWallet, map: StringMap, keys?: KeyPair): Promise<void> {
-        const address: string = map[PARAMETERS.ADDRESS]
+        const dest: string = map[PARAMETERS.DEST]
         const value: number = readInt(map[PARAMETERS.VALUE])
         const bounce: boolean = readBoolean(map[PARAMETERS.BOUNCE])
         const flags: number = readInt(map[PARAMETERS.FLAGS])
         const comment: string = map[PARAMETERS.COMMENT]
-        await contract.sendTransactionWithComment(address, value, bounce, flags, comment, keys)
+        await contract.sendTransaction({
+            dest,
+            value,
+            bounce,
+            flags,
+            payload: await getPayloadToTransfer(this._client, comment)
+        }, keys)
     }
 }
