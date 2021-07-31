@@ -3,7 +3,7 @@ import {Call, CallConfig, Contract, readBoolean, readInt, StringMap} from 'jton'
 import {GiverV2} from '../'
 
 enum PARAMETERS {
-    ADDRESS = 'address',
+    DEST = 'dest',
     VALUE = 'value',
     BOUNCE = 'bounce'
 }
@@ -57,7 +57,7 @@ export class GiverV2Send extends Call {
     protected _getTargetContract(map: StringMap, timeout?: number): Contract {
         return new Contract(this._client, {
             abi: {},
-            address: map[PARAMETERS.ADDRESS]
+            address: map[PARAMETERS.DEST]
         }, timeout)
     }
 
@@ -79,13 +79,13 @@ export class GiverV2Send extends Call {
      *     }
      */
     protected async _call(contract: GiverV2, map: StringMap, keys: KeyPair): Promise<void> {
-        const address: string = map[PARAMETERS.ADDRESS]
+        const dest: string = map[PARAMETERS.DEST]
         const value: number = readInt(map[PARAMETERS.VALUE])
         const bounce: boolean = readBoolean(map[PARAMETERS.BOUNCE])
         await contract.sendTransaction({
-            dest: address,
-            value: value,
-            bounce: bounce
+            dest,
+            value,
+            bounce
         }, keys)
     }
 }
