@@ -16,7 +16,7 @@ export interface GetDetailsOut {
     root_address: string
     wallet_public_key: string
     owner_address: string
-    balance_: string
+    balance: string
     receive_callback: string
     bounced_callback: string
     allow_non_notifiable: boolean
