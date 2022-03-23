@@ -1,6 +1,6 @@
 {
   "name": "jton-contracts",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "Free TON contracts wrapped in jTON",
   "main": "dist/index",
   "scripts": {
